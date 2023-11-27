@@ -9,7 +9,7 @@ const StartPage = () => {
 
 
   const handleClick = () => {
-    navigate("/question");
+    navigate("/lobby");
   };
 
   return (
