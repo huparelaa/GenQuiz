@@ -18,7 +18,7 @@ function Results() {
 
   return (
     <>
-      <div>I'm the winner :D</div>
+      <div>Todos ganan :)</div>
       <button onClick={handleRestart}>Reiniciar</button>
     </>
   );

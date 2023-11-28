@@ -4,11 +4,12 @@ import { GroupsContext } from "../context/GroupsContext";
 import { QuestionsContext } from "../context/QuestionsContext";
 import GroupInGameCard from "../components/GroupInGameCard";
 import { useCounter } from "../hooks/useCounter";
+import { LOBBY_WAIT_TIME } from "../constants";
 
 function QuestionsLobby() {
   const { groups } = useContext(GroupsContext);
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionsContext);
-  const { counter, doSomething } = useCounter(1);
+  const { counter, doSomething } = useCounter(LOBBY_WAIT_TIME);
 
   let navigate = useNavigate();
 
