@@ -5,7 +5,7 @@ import {
   generateRandomNames,
 } from "../utils/randomGeneration";
 import { MAX_TEAMS } from "../constants";
-import assignKey from "../utils/assignKey";
+import { assignKey } from "../utils/assignKey";
 
 export const GroupsContext = createContext();
 
@@ -36,7 +36,9 @@ export const GroupsProvider = ({ children }) => {
   };
 
   return (
-    <GroupsContext.Provider value={{ groups, addGroup, removeGroup, updateGroup }}>
+    <GroupsContext.Provider
+      value={{ groups, addGroup, removeGroup, updateGroup, setGroups }}
+    >
       {children}
     </GroupsContext.Provider>
   );

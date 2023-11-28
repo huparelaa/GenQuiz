@@ -3,30 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { GroupsContext } from "../context/GroupsContext";
 import { QuestionsContext } from "../context/QuestionsContext";
 import GroupInGameCard from "../components/GroupInGameCard";
+import { useCounter } from "../hooks/useCounter";
 
 function QuestionsLobby() {
   const { groups } = useContext(GroupsContext);
   const { currentQuestionId, setCurrentQuestionId } = useContext(QuestionsContext);
-  const [counter, setCounter] = useState(5); // Contador inicializado en 5 segundos
+  const { counter, doSomething } = useCounter(1);
 
   let navigate = useNavigate();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => prevCounter - 1);
-    }, 1000);
-
-    const timer = setTimeout(() => {
-      clearInterval(interval); // Limpia el intervalo antes de la redirección
+    if (doSomething) {
       setCurrentQuestionId(currentQuestionId + 1);
       navigate("/question");
-    }, 5000);
-
-    return () => {
-      clearTimeout(timer);
-      clearInterval(interval);
-    };
-  }, [setCurrentQuestionId, navigate, currentQuestionId]);
+    }
+  }, [doSomething]);
 
   return (
     <div>
