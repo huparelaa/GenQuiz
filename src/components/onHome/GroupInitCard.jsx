@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
-import Edit from "../assets/Edit";
-import Reload from "../assets/Reload";
+import Edit from "../../assets/Edit";
+import Reload from "../../assets/Reload";
 import {
   generateRandomColor,
   generateRandomNames,
-} from "../utils/randomGeneration";
-import Remove from "../assets/Remove";
-import { GroupsContext } from "../context/GroupsContext";
+} from "../../utils/randomGeneration";
+import Remove from "../../assets/Remove";
+import { GroupsContext } from "../../context/GroupsContext";
 
 const GroupInitCard = ({ id }) => {
   const { groups, updateGroup, removeGroup } = useContext(GroupsContext);

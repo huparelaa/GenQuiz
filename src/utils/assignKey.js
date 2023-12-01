@@ -1,4 +1,5 @@
-const AVAILABLE_KEYS = ["W", "P", "X", "M", "B", "L", "S", "C", "F", "G", "H", "J", "K", "Q", "R", "T", "V", "Y", "Z", "A", "D", "E", "I", "N", "O", "U"];
+const ORIGINAL_KEYS = ["W", "P", "X", "M", "B", "L", "S", "C", "F", "G", "H", "J", "K", "Q", "R", "T", "V", "Y", "Z", "A", "D", "E", "I", "N", "O", "U"];
+const AVAILABLE_KEYS = [...ORIGINAL_KEYS];
 
 export function assignKey() {
   const key = AVAILABLE_KEYS[0];
@@ -6,12 +7,8 @@ export function assignKey() {
   return key;
 }
 
-export function restoreKey(key) {
-  const AVAILABLE_KEYS_R = ["W", "P", "X", "M", "B", "L", "S", "C", "F", "G", "H", "J", "K", "Q", "R", "T", "V", "Y", "Z", "A", "D", "E", "I", "N", "O", "U"];
-  AVAILABLE_KEYS.forEach((k, index) => {
-    AVAILABLE_KEYS.splice(0, 1);
-  });
-  //Restauramos las teclas que se han usado
-  AVAILABLE_KEYS_R.push(key);
-  return key;
+export function restoreKey(){
+  // Restaura AVAILABLE_KEYS a su estado original
+  AVAILABLE_KEYS.length = 0; // Vacía el arreglo existente
+  AVAILABLE_KEYS.push(...ORIGINAL_KEYS); // Llena el arreglo con las teclas originales
 }

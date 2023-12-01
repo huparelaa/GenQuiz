@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { GroupsContext } from "../context/GroupsContext";
 import { QuestionsContext } from "../context/QuestionsContext";
-import GroupInGameCard from "../components/GroupInGameCard";
+import GroupInGameCard from "../components/onLobby/GroupInGameCard";
 import { useCounter } from "../hooks/useCounter";
 import { LOBBY_WAIT_TIME } from "../constants";
 

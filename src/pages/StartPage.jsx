@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import GroupInitCard from "../components/GroupInitCard";
+import GroupInitCard from "../components/onHome/GroupInitCard";
 import { GroupsContext } from "../context/GroupsContext";
 
 const StartPage = () => {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { GroupsContext } from "../context/GroupsContext"; // Asegúrate de que la ruta sea correcta
+import { GroupsContext } from "../../context/GroupsContext"; // Asegúrate de que la ruta sea correcta
 
 const GroupInGameCard = ({ id }) => {
   const { groups } = useContext(GroupsContext);

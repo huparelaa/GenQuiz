@@ -1,6 +1,6 @@
-import { QuestionsContext } from "../context/QuestionsContext";
+import { QuestionsContext } from "../../context/QuestionsContext";
 import { useContext } from "react";
-import { QUESTIONS } from "../questions";
+import { QUESTIONS } from "../../questions";
 
 function AnswersCard() {
   const { currentQuestionId } = useContext(QuestionsContext);
